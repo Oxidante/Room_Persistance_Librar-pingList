@@ -13,6 +13,7 @@ import com.example.room_persistance_librar_shoppinglist.entities.ShoppingListNam
         ShoppingListNames::class], version = 1)
 
 abstract class MainDataBase : RoomDatabase() {
+    abstract fun getDao(): Dao
 
     companion object {
         @Volatile
