@@ -20,7 +20,6 @@ import java.util.Locale
 
 class NewNoteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNewNoteBinding
-    private lateinit var editLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +46,8 @@ class NewNoteActivity : AppCompatActivity() {
         val i = Intent().apply {
             putExtra(NoteFragment.NEW_NOTE_KEY, createsNewNotes())
         }
+        setResult(RESULT_OK,i)
+        finish()
     }
 
     private fun createsNewNotes(): NoteItem {
